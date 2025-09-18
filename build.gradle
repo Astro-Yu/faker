@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'nextstep'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // 데이터 생성을 위한 DataFaker
+    implementation 'net.datafaker:datafaker:2.3.0'
+
+    // CSV 파일 처리를 위한 Apache Commons CSV
+    implementation 'org.apache.commons:commons-csv:1.11.0'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
