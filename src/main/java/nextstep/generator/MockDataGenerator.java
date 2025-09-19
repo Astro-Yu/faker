@@ -51,7 +51,7 @@ public class MockDataGenerator {
         for (long i = 1; i <= userCount; i++) { // 유저
             users.add(new User(
                     i,
-                    faker.internet().safeEmailAddress(),
+                    i + faker.internet().safeEmailAddress(),
                     faker.internet().password(),
                     faker.name().username() + i, // Unique nickname
                     Timestamp.valueOf(LocalDateTime.now()),
@@ -225,7 +225,7 @@ public class MockDataGenerator {
         CSVFormat format = CSVFormat.DEFAULT.builder()
                 .setHeader(headers)
                 .setRecordSeparator('\n')
-                .setNullString("\\N") // DB에서 NULL을 표현하는 방식
+                .setNullString(null) // DB에서 NULL을 표현하는 방식
                 .build();
 
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputPath, fileName));
