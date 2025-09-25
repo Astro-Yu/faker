@@ -13,7 +13,7 @@ public class Main {
             Files.createDirectories(Paths.get(outputPath)); // 디렉토리 생성
 
             MockDataGenerator generator = new MockDataGenerator(outputPath);
-            generator.customGenerate(100, 2000);
+            generator.customGenerate(100, 20000);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
